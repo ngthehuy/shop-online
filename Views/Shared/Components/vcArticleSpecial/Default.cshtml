@@ -1,0 +1,39 @@
+﻿@model List<Article>
+<div class="blog-aside aside-item blog-aside-article">
+    <div>
+        <div class="aside-title">
+            <h2 class="title-head">
+                <span>
+                    <a href="tin-tuc.html" title="Tin tức nổi bật">Tin tức nổi bật</a>
+                </span>
+            </h2>
+        </div>
+        <div class="aside-content-article aside-content">
+            <div class="blog-list blog-image-list">
+
+                @foreach(var item in Model)
+                {
+                    <div class="loop-blog">
+                        <div class="thumb-left">
+                            <a asp-route="ArticleDetail" asp-route-id="@item.ArticleId" asp-route-title="@item.Title?.RemoveVietnameseAccents()">
+
+                                <img src="@item.Thumb" data-lazyload="@item.Thumb" style="max-width: 100%;" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="name-right">
+                            <h3>
+                                <a asp-route="ArticleDetail" asp-route-id="@item.ArticleId" asp-route-title="@item.Title?.RemoveVietnameseAccents()">@item.Title</a>
+                            </h3>
+
+                        </div>
+                    </div>
+                }
+
+              
+
+                
+
+            </div>
+        </div>
+    </div>
+</div>

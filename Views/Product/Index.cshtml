@@ -1,0 +1,963 @@
+﻿@model List<Product>
+<div class="breadcrumb_background">
+    <div class="title_full">
+        <div class="container a-center">
+            <h1 class="title_page">@ViewBag.catTitle</h1>
+        </div>
+    </div>
+</div>
+<section class="bread-crumb">
+    <span class="crumb-border"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 a-left">
+                <ul class="breadcrumb" itemscope itemtype="https://data-vocabulary.org/Breadcrumb">
+                    <li class="home">
+                        <a itemprop="url" href="index.html"><span itemprop="title">Trang chủ</span></a>
+                        <span class="mr_lr">&nbsp;/&nbsp;</span>
+                    </li>
+
+                    <li><strong><span itemprop="title">@ViewBag.CatTitle</span></strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="wrap_background_aside padding-top-15 margin-bottom-10">
+    <div class="container">
+        <div class="row">
+            <div class="bg_collection">
+                <aside class="dqdt-sidebar sidebar left-content col-lg-3 col-lg-3-fix">
+                    <div class="wrap_background_aside asidecollection">
+
+
+                        <div class="aside-filter">
+                            <!-- Lọc giá -->
+                            <aside class="aside-item filter-price">
+                                <div class="aside-title">
+                                    <h2 class="title-head margin-top-0"><span>Mức giá</span></h2>
+                                </div>
+                                <div class="aside-content filter-group">
+                                    <ul>
+                                        <li class="filter-item filter-item--check-box filter-item--green">
+                                            <span>
+                                                <label data-filter="100-000d" for="filter-duoi-100-000d">
+                                                    <input type="checkbox" id="filter-duoi-100-000d" data-group="Khoảng giá" data-field="price_min" data-text="Dưới 100.000đ" value="(<100000)" data-operator="OR">
+                                                    <i class="fa"></i>
+                                                    Giá dưới 100.000đ
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="filter-item filter-item--check-box filter-item--green">
+                                            <span>
+                                                <label data-filter="200-000d" for="filter-100-000d-200-000d">
+                                                    <input type="checkbox" id="filter-100-000d-200-000d" data-group="Khoảng giá" data-field="price_min" data-text="100.000đ - 200.000đ" value="(>100000 AND <200000)" data-operator="OR">
+                                                    <i class="fa"></i>
+                                                    100.000đ - 200.000đ
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="filter-item filter-item--check-box filter-item--green">
+                                            <span>
+                                                <label data-filter="300-000d" for="filter-200-000d-300-000d">
+                                                    <input type="checkbox" id="filter-200-000d-300-000d" data-group="Khoảng giá" data-field="price_min" data-text="200.000đ - 300.000đ" value="(>200000 AND <300000)" data-operator="OR">
+                                                    <i class="fa"></i>
+                                                    200.000đ - 300.000đ
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="filter-item filter-item--check-box filter-item--green">
+                                            <span>
+                                                <label data-filter="500-000d" for="filter-300-000d-500-000d">
+                                                    <input type="checkbox" id="filter-300-000d-500-000d" data-group="Khoảng giá" data-field="price_min" data-text="300.000đ - 500.000đ" value="(>300000 AND <500000)" data-operator="OR">
+                                                    <i class="fa"></i>
+                                                    300.000đ - 500.000đ
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="filter-item filter-item--check-box filter-item--green">
+                                            <span>
+                                                <label data-filter="1-000-000d" for="filter-500-000d-1-000-000d">
+                                                    <input type="checkbox" id="filter-500-000d-1-000-000d" data-group="Khoảng giá" data-field="price_min" data-text="500.000đ - 1.000.000đ" value="(>500000 AND <1000000)" data-operator="OR">
+                                                    <i class="fa"></i>
+                                                    500.000đ - 1.000.000đ
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="filter-item filter-item--check-box filter-item--green">
+                                            <span>
+                                                <label data-filter="1-000-000d" for="filter-tren1-000-000d">
+                                                    <input type="checkbox" id="filter-tren1-000-000d" data-group="Khoảng giá" data-field="price_min" data-text="Trên 1.000.000đ" value="(>1000000)" data-operator="OR">
+                                                    <i class="fa"></i>
+                                                    Giá trên 1.000.000đ
+                                                </label>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </aside>
+                            <!-- End Lọc giá -->
+                        </div>
+
+
+
+                        <div class="section_best_sale aside-filter">
+                            <div class="aside-item aside-mini-list-product">
+                                <div>
+                                    <div class="left-content">
+                                        <div class="aside-title">
+                                            <h2 class="title-head margin-top-0">
+                                                <a href="san-pham-noi-bat.html" title="Có thể bạn thích">Có thể bạn thích</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="related-products">
+                                        <div class="product-mini-lists owl-carousel" data-lg-items='1' data-md-items='1' data-sm-items='1' data-xs-items="1" data-margin='0' data-nav="true">
+
+
+
+                                            <div class="products itemss">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+
+                                                        <div class="item_small item_product_main">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                            <div class="product-box product-item-main product-main-list-mini product-mini-item clearfix">
+                                                                <div class="product-thumbnail">
+                                                                    <a href="iphone-xr-128gb.html" class="product-img image_thumb p_img" title="iPhone XR 128GB">
+                                                                        <img src="contents/images-icons/loading0446.gif?1594811922421" data-lazyload="//bizweb.dktcdn.net/thumb/small/100/341/423/products/10-1.png?v=1544578028000" alt="iPhone XR 128GB">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="product-info product-bottom">
+
+                                                                    <div class="reviews_item_product active a-left">
+                                                                        <div class="bizweb-product-reviews-badge a-left" data-id="13351058"></div>
+                                                                    </div>
+
+                                                                    <h3 class="product-title product-name text3line">
+                                                                        <a href="iphone-xr-128gb.html" title="iPhone XR 128GB">iPhone XR 128GB</a>
+                                                                    </h3>
+
+                                                                    <div class="blockprice">
+                                                                        <div class="product-item-price price-box">
+
+
+
+                                                                            <span class="price-style">
+                                                                                <span class="old-price">27.000.000₫</span>
+                                                                            </span>
+
+                                                                            <span class="price-style">
+                                                                                <span class="special-price">24.900.000₫</span>
+                                                                            </span>
+
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+
+                                                        <div class="item_small item_product_main">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                            <div class="product-box product-item-main product-main-list-mini product-mini-item clearfix">
+                                                                <div class="product-thumbnail">
+                                                                    <a href="xiaomi-pocophone-f1.html" class="product-img image_thumb p_img" title="Xiaomi Pocophone F1">
+                                                                        <img src="contents/images-icons/loading0446.gif?1594811922421" data-lazyload="//bizweb.dktcdn.net/thumb/small/100/341/423/products/3-jpeg.jpg" alt="Xiaomi Pocophone F1">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="product-info product-bottom">
+
+                                                                    <div class="reviews_item_product active a-left">
+                                                                        <div class="bizweb-product-reviews-badge a-left" data-id="13342920"></div>
+                                                                    </div>
+
+                                                                    <h3 class="product-title product-name text3line">
+                                                                        <a href="xiaomi-pocophone-f1.html" title="Xiaomi Pocophone F1">Xiaomi Pocophone F1</a>
+                                                                    </h3>
+
+                                                                    <div class="blockprice">
+                                                                        <div class="product-item-price price-box">
+
+
+
+                                                                            <span class="price-style">
+                                                                                <span class="old-price">8.500.000₫</span>
+                                                                            </span>
+
+                                                                            <span class="price-style">
+                                                                                <span class="special-price">8.100.000₫</span>
+                                                                            </span>
+
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+
+                                                        <div class="item_small item_product_main">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                            <div class="product-box product-item-main product-main-list-mini product-mini-item clearfix">
+                                                                <div class="product-thumbnail">
+                                                                    <a href="asus-zenfone-5-ze620kl.html" class="product-img image_thumb p_img" title="Asus Zenfone 5 (ZE620KL)">
+                                                                        <img src="contents/images-icons/loading0446.gif?1594811922421" data-lazyload="//bizweb.dktcdn.net/thumb/small/100/341/423/products/8-3.jpg?v=1544436321587" alt="Asus Zenfone 5 (ZE620KL)">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="product-info product-bottom">
+
+                                                                    <div class="reviews_item_product active a-left">
+                                                                        <div class="bizweb-product-reviews-badge a-left" data-id="13342907"></div>
+                                                                    </div>
+
+                                                                    <h3 class="product-title product-name text3line">
+                                                                        <a href="asus-zenfone-5-ze620kl.html" title="Asus Zenfone 5 (ZE620KL)">Asus Zenfone 5 (ZE620KL)</a>
+                                                                    </h3>
+
+                                                                    <div class="blockprice">
+                                                                        <div class="product-item-price price-box">
+
+
+
+                                                                            <span class="price-style">
+                                                                                <span class="old-price">10.000.000₫</span>
+                                                                            </span>
+
+                                                                            <span class="price-style">
+                                                                                <span class="special-price">7.990.000₫</span>
+                                                                            </span>
+
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+
+                                                        <div class="item_small item_product_main">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                            <div class="product-box product-item-main product-main-list-mini product-mini-item clearfix">
+                                                                <div class="product-thumbnail">
+                                                                    <a href="sony-xperia-xa1-plus.html" class="product-img image_thumb p_img" title="Sony Xperia XA1 Plus">
+                                                                        <img src="contents/images-icons/loading0446.gif?1594811922421" data-lazyload="//bizweb.dktcdn.net/thumb/small/100/341/423/products/7-1.jpg?v=1544436130857" alt="Sony Xperia XA1 Plus">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="product-info product-bottom">
+
+                                                                    <div class="reviews_item_product active a-left">
+                                                                        <div class="bizweb-product-reviews-badge a-left" data-id="13342892"></div>
+                                                                    </div>
+
+                                                                    <h3 class="product-title product-name text3line">
+                                                                        <a href="sony-xperia-xa1-plus.html" title="Sony Xperia XA1 Plus">Sony Xperia XA1 Plus</a>
+                                                                    </h3>
+
+                                                                    <div class="blockprice">
+                                                                        <div class="product-item-price price-box">
+
+
+                                                                            <span class="price-style">
+                                                                                <span class="special-price">1.000.000₫</span>
+                                                                            </span>
+
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <div class="products itemss">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+
+                                                        <div class="item_small item_product_main">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                            <div class="product-box product-item-main product-main-list-mini product-mini-item clearfix">
+                                                                <div class="product-thumbnail">
+                                                                    <a href="huawei-nova-3.html" class="product-img image_thumb p_img" title="Huawei Nova 3">
+                                                                        <img src="contents/images-icons/loading0446.gif?1594811922421" data-lazyload="//bizweb.dktcdn.net/thumb/small/100/341/423/products/6-1.jpg?v=1544435824237" alt="Huawei Nova 3">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="product-info product-bottom">
+
+                                                                    <div class="reviews_item_product active a-left">
+                                                                        <div class="bizweb-product-reviews-badge a-left" data-id="13342832"></div>
+                                                                    </div>
+
+                                                                    <h3 class="product-title product-name text3line">
+                                                                        <a href="huawei-nova-3.html" title="Huawei Nova 3">Huawei Nova 3</a>
+                                                                    </h3>
+
+                                                                    <div class="blockprice">
+                                                                        <div class="product-item-price price-box">
+
+
+
+                                                                            <span class="price-style">
+                                                                                <span class="old-price">11.000.000₫</span>
+                                                                            </span>
+
+                                                                            <span class="price-style">
+                                                                                <span class="special-price">9.900.000₫</span>
+                                                                            </span>
+
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+
+                                                        <div class="item_small item_product_main">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                            <div class="product-box product-item-main product-main-list-mini product-mini-item clearfix">
+                                                                <div class="product-thumbnail">
+                                                                    <a href="oppo-f9.html" class="product-img image_thumb p_img" title="OPPO F9">
+                                                                        <img src="contents/images-icons/loading0446.gif?1594811922421" data-lazyload="//bizweb.dktcdn.net/thumb/small/100/341/423/products/5-1.jpg?v=1544435393253" alt="OPPO F9">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="product-info product-bottom">
+
+                                                                    <div class="reviews_item_product active a-left">
+                                                                        <div class="bizweb-product-reviews-badge a-left" data-id="13342795"></div>
+                                                                    </div>
+
+                                                                    <h3 class="product-title product-name text3line">
+                                                                        <a href="oppo-f9.html" title="OPPO F9">OPPO F9</a>
+                                                                    </h3>
+
+                                                                    <div class="blockprice">
+                                                                        <div class="product-item-price price-box">
+
+
+
+                                                                            <span class="price-style">
+                                                                                <span class="old-price">8.500.000₫</span>
+                                                                            </span>
+
+                                                                            <span class="price-style">
+                                                                                <span class="special-price">7.500.000₫</span>
+                                                                            </span>
+
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+
+                                                        <div class="item_small item_product_main">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                            <div class="product-box product-item-main product-main-list-mini product-mini-item clearfix">
+                                                                <div class="product-thumbnail">
+                                                                    <a href="xiaomi-mi-8-64gb.html" class="product-img image_thumb p_img" title="Xiaomi Mi 8 64GB">
+                                                                        <img src="contents/images-icons/loading0446.gif?1594811922421" data-lazyload="//bizweb.dktcdn.net/thumb/small/100/341/423/products/4-1.jpg?v=1544435173823" alt="Xiaomi Mi 8 64GB">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="product-info product-bottom">
+
+                                                                    <div class="reviews_item_product active a-left">
+                                                                        <div class="bizweb-product-reviews-badge a-left" data-id="13342777"></div>
+                                                                    </div>
+
+                                                                    <h3 class="product-title product-name text3line">
+                                                                        <a href="xiaomi-mi-8-64gb.html" title="Xiaomi Mi 8 64GB">Xiaomi Mi 8 64GB</a>
+                                                                    </h3>
+
+                                                                    <div class="blockprice">
+                                                                        <div class="product-item-price price-box">
+
+
+
+                                                                            <span class="price-style">
+                                                                                <span class="old-price">14.000.000₫</span>
+                                                                            </span>
+
+                                                                            <span class="price-style">
+                                                                                <span class="special-price">12.900.000₫</span>
+                                                                            </span>
+
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+
+                                                        <div class="item_small item_product_main">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                            <div class="product-box product-item-main product-main-list-mini product-mini-item clearfix">
+                                                                <div class="product-thumbnail">
+                                                                    <a href="samsung-galaxy-s9-128gb.html" class="product-img image_thumb p_img" title="Samsung Galaxy S9+ 128GB">
+                                                                        <img src="contents/images-icons/loading0446.gif?1594811922421" data-lazyload="//bizweb.dktcdn.net/thumb/small/100/341/423/products/3-1.png?v=1544434861397" alt="Samsung Galaxy S9+ 128GB">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="product-info product-bottom">
+
+                                                                    <div class="reviews_item_product active a-left">
+                                                                        <div class="bizweb-product-reviews-badge a-left" data-id="13342733"></div>
+                                                                    </div>
+
+                                                                    <h3 class="product-title product-name text3line">
+                                                                        <a href="samsung-galaxy-s9-128gb.html" title="Samsung Galaxy S9+ 128GB">Samsung Galaxy S9+ 128GB</a>
+                                                                    </h3>
+
+                                                                    <div class="blockprice">
+                                                                        <div class="product-item-price price-box">
+
+
+
+                                                                            <span class="price-style">
+                                                                                <span class="old-price">23.000.000₫</span>
+                                                                            </span>
+
+                                                                            <span class="price-style">
+                                                                                <span class="special-price">20.000.000₫</span>
+                                                                            </span>
+
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </aside>
+                <div class="main_container collection col-lg-9 col-lg-9-fix padding-col-left-0">
+                    <div class="category-products products">
+                        <div class="sortPagiBar">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="bg-white sort-cate clearfix f-left">
+                                        <div class="sort-cate-left hidden-xs hidden-sm">
+                                            <h3>Ưu tiên xem:</h3>
+                                            <ul>
+                                                <li class="btn-quick-sort position-desc">
+                                                    <a href="javascript:;" onclick="sortby('created-desc')"><i></i>Hàng mới về</a>
+                                                </li>
+                                                <li class="btn-quick-sort position-asc">
+                                                    <a href="javascript:;" onclick="sortby('created-asc')"><i></i>Hàng cũ nhất</a>
+                                                </li>
+                                                <li class="btn-quick-sort price-asc">
+                                                    <a href="javascript:;" onclick="sortby('price-asc')"><i></i>Giá tăng dần</a>
+                                                </li>
+                                                <li class="btn-quick-sort price-desc">
+                                                    <a href="javascript:;" onclick="sortby('price-desc')"><i></i>Giá giảm dần</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <section class="products-view products-view-grid collection_reponsive list_hover_pro">
+                            <div class="row">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4 product-col">
+                                        <div class="item_product_main item_product_main_relative">
+                                            <div class="product-item grid product-box product-item-main clearfix">
+                                                <div class="product-thumbnail">
+
+
+
+
+                                                    <div class="saleright">
+                                                        <span>
+                                                            -
+                                                            8%
+                                                        </span>
+                                                    </div>
+
+                                                    <a class="image_thumb" asp-route="ProductDetail" asp-route-id="@item.ProductId" asp-route-title="@item.Title?.RemoveVietnameseAccents()">
+                                                        <img src="@item.Avatar" data-lazyload="@item.Avatar">
+                                                    </a>
+
+                                                </div>
+                                                <div class="product-detail product-info">
+
+
+                                                    <h3 class="product-title">
+                                                        <a asp-route="ProductDetail" asp-route-id="@item.ProductId" asp-route-title="@item.Title?.RemoveVietnameseAccents()" title="iPhone XR 128GB">@item.Title</a>
+                                                    </h3>
+
+                                                    <div class="blockprice ">
+                                                        <div class="hidden percent tag-style">
+                                                            <a>
+                                                                8%
+                                                            </a>
+                                                        </div>
+                                                        <div class="product-item-price price-box">
+
+
+
+                                                            <span class="price-style">
+                                                                <span class="old-price">@item.OldPrice.GetCurrencyFormat()</span>
+                                                            </span>
+
+                                                            <span class="price-style">
+                                                                <span class="special-price">@item.Price.GetCurrencyFormat()</span>
+                                                            </span>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="button-view product-action clearfix">
+                                                    <div class="add-cart btn-buy button">
+                                                        <a class="btn-cart button_35 left-to" asp-route="ProductDetail" asp-route-id="@item.ProductId" asp-route-title="@item.Title?.RemoveVietnameseAccents()">
+                                                            <span>Xem chi tiết</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                          
+                                        </div>
+                                    </div>
+                                }
+                               
+
+                               
+
+                            </div>
+
+                            <!--vcPading-->
+                            <vc:vc-pading totals="@ViewBag.pagingtotal" page-size="@ViewBag.pagingSize"
+                                page="@ViewBag.pagingPage" url = "@ViewBag.pagdingURL"
+                            />
+
+                        </section>
+                    </div>
+
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

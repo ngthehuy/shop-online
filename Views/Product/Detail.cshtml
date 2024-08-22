@@ -1,0 +1,319 @@
+﻿@model Product
+<div class="breadcrumb_background">
+    <div class="title_full">
+        <div class="container a-center">
+            <h1 class="title_page">@Model.Title</h1>
+        </div>
+    </div>
+</div>
+<section class="bread-crumb">
+    <span class="crumb-border"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 a-left">
+                <ul class="breadcrumb" itemscope itemtype="https://data-vocabulary.org/Breadcrumb">
+                    <li class="home">
+                        <a itemprop="url" href="index.html"><span itemprop="title">Trang chủ</span></a>
+                        <span class="mr_lr">&nbsp;/&nbsp;</span>
+                    </li>
+
+
+                    <li>
+                        <a itemprop="url" href="san-pham-khuyen-mai.html"><span itemprop="title">Sản phẩm khuyến mãi</span></a>
+                        <span class="mr_lr">&nbsp;/&nbsp;</span>
+                    </li>
+
+                    <li>
+                        <strong><span itemprop="title">@Model.Title</span></strong>
+                    <li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="product margin-top-10 f-left w_100" itemscope itemtype="https://schema.org/Product">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 padding-col-left-0">
+                <div class="row details-product">
+
+                    <div class="product-detail-left product-images col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="col_large_default large-image">
+
+                            <a href="@Model.Avatar" data-rel="prettyPhoto[product-gallery]">
+
+                                <img class="checkurl img-responsive" id="img_01" src="@Model.Avatar">
+                            </a>
+
+
+                        </div>
+
+                        <div id="gallery_02" class="owl-carousel owl-theme thumbnail-product thumb_product_details not-dqowl"
+                             data-loop="false" data-lg-items="4" data-md-items="3" data-sm-items="3" data-xs-items="3" data-xxs-items="3">
+
+                            @foreach (var item in @Model.ImageList.GetListImage())
+                            {
+                                <div class="item">
+                                    <a href="javascript:void(0)"
+                                       data-image="@item"
+                                       data-zoom-image="@item">
+                                        <img data-img="@item" src="@item"
+                                             data-lazyload="@item">
+                                    </a>
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 details-pro">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="fw w_100 section">
+                                    <div class="price-box">
+                                        <span class="special-price">
+                                            <span class="price product-price">
+                                                @Model.Price.GetCurrencyFormat()
+                                            </span>
+                                        </span>
+                                        <!-- Giá Khuyến mại -->
+                                        <span class="old-price" itemprop="priceSpecification" itemscope itemtype="https://schema.org/priceSpecification">
+                                            <del class="price product-price-old">
+                                                @Model.OldPrice.GetCurrencyFormat()
+                                            </del>
+                                        </span>
+                                        <!-- Giá gốc -->
+
+                                    </div>
+                                    <div class="group-status">
+                                        <span class="first_status section status margin-bottom-10">
+                                            Tình trạng:
+                                            <span class="status_name availabel hasvariant">
+                                                <span class="status_name availabel">
+                                                    @(Model.Status == true ? "Còn hàng" : "Hết hàng")
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="section product-summary">
+                                        <div class="rte">
+                                            @Html.Raw(Model.Specification)
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-product">
+                                    <div class="form-inline margin-bottom-0">
+                                        <div class="form-group form_button_details">
+                                            <div class="form_product_content">
+                                                <form asp-route="AddToCart" method="post">
+                                                    <input type="hidden" name="productId" value="@Model.ProductId" />
+                                                    <input type="hidden" name="productName" value="@Model.Title" />
+                                                    <input type="hidden" name="productPrice" value="@Model.Price" />
+                                                    <input type="hidden" name="oldPrice" value="@Model.OldPrice" />
+                                                    <input type="hidden" name="avatar" value="@Model.Avatar" />
+
+                                                    <div class="soluong show">
+                                                        <div class="label_sl margin-bottom-5">Số lượng:</div>
+                                                        <div class="custom input_number_product custom-btn-number form-control">
+                                                            <button class="btn_num num_1 button button_qty" type="button" onclick="decrementQuantity()">-</button>
+                                                            <input type="text" id="qtym" name="quantity" value="1" class="form-control prd_quantity" />
+                                                            <button class="btn_num num_2 button button_qty" type="button" onclick="incrementQuantity()">+</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="button_actions clearfix">
+                                                        <button type="submit" class="btn btn_base btn_add_cart btn-cart add_to_cart">
+                                                            <span class="text_1">Cho vào giỏ hàng</span>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab_h">
+
+                    <!-- Nav tabs -->
+                    <div class="product-tab e-tabs not-dqtab">
+                        <ul class="tabs tabs-title clearfix">
+
+                            <li class="tab-link" data-tab="tab-1">
+                                <h3><span>Mô tả sản phẩm</span></h3>
+                            </li>
+
+
+                            <li class="tab-link" data-tab="tab-2">
+                                <h3><span>Tab tùy chỉnh</span></h3>
+                            </li>
+
+
+                            <li class="tab-link" data-tab="tab-3">
+                                <h3><span>Đánh giá</span></h3>
+                            </li>
+
+                        </ul>
+
+                        <div class="tab-float">
+
+                            <div id="tab-1" class="tab-content content_extab">
+                                <div class="rte">
+                                    @Html.Raw(Model.Content)
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id="tab-2" class="tab-content content_extab">
+                            <div class="rte">
+                                Nội dung tùy chỉnh viết ở đây
+
+                            </div>
+                        </div>
+
+
+                        <div id="tab-3" class="tab-content content_extab tab-review-c">
+                            <div class="rte">
+                                <div id="bizweb-product-reviews" class="bizweb-product-reviews" data-id="13342777">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <aside class="sidebar left-content col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+
+                <div class="hed-service section_service hidden-sm hidden-xs">
+
+
+
+
+                    <div class="service-item">
+                        <a class="icon-service">
+                            <img src="contents/images-icons/loading-icon0446.png?1594811922421" data-lazyload="//bizweb.dktcdn.net/100/341/423/themes/777143/assets/icon1.png?1594811922421" alt="Giao hàng miễn phí">
+                        </a>
+                        <div class="service">
+                            <span class="service-title">Giao hàng miễn phí</span>
+                            <span class="service-subtitle">Áp dụng cho đơn hàng trên 500.000đ tại Hà Nội và TP. HCM</span>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="service-item">
+                        <a class="icon-service">
+                            <img src="contents/images-icons/loading-icon0446.png?1594811922421" data-lazyload="//bizweb.dktcdn.net/100/341/423/themes/777143/assets/icon2.png?1594811922421" alt="Tri ân khách hàng ">
+                        </a>
+                        <div class="service">
+                            <span class="service-title">Tri ân khách hàng </span>
+                            <span class="service-subtitle">Ưu đãi cực lớn, giảm thêm 10% cho khách hàng thân thiết</span>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="service-item">
+                        <a class="icon-service">
+                            <img src="contents/images-icons/loading-icon0446.png?1594811922421" data-lazyload="//bizweb.dktcdn.net/100/341/423/themes/777143/assets/icon3.png?1594811922421" alt="Đổi trả trong 30 ngày">
+                        </a>
+                        <div class="service">
+                            <span class="service-title">Đổi trả trong 30 ngày</span>
+                            <span class="service-subtitle">Dịch vụ đổi trả, hoàn tiền nhanh chóng với tất cả sản phẩm</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="wrap_background_aside asidecollection">
+                    <aside class="aside-item sidebar-category collection-category">
+                        <div class="aside-title">
+                            <h2 class="title-head margin-top-0 margin-bottom-10"><span class="category-select">Danh mục sản phẩm</span></h2>
+                        </div>
+                        <div class="aside-content">
+                            <nav class="nav-category navbar-toggleable-md">
+                                <ul class="nav navbar-pills">
+
+
+                                    <li class="nav-item lv1">
+                                        <a class="nav-link" href="index.html">Trang chủ</a>
+
+
+
+                                    <li class="nav-item lv1">
+                                        <a class="nav-link" href="gioi-thieu.html">Giới thiệu</a>
+
+
+
+                                    <li class="nav-item lv1">
+                                        <a class="nav-link" href="collections/collections-all.html">Sản phẩm</a>
+
+
+
+                                    <li class="nav-item lv1">
+                                        <a href="tin-tuc.html" class="nav-link">Tin tức</a>
+                                        <i class="fa fa-angle-right"></i>
+                                        <ul class="dropdown-menu">
+
+
+                                            <li class="nav-item lv2">
+                                                <a class="nav-link" href="tin-moi.html">Tin mới</a>
+                                            </li>
+
+
+
+                                            <li class="nav-item lv2">
+                                                <a class="nav-link" href="thu-thuat.html">Thủ thuật</a>
+                                            </li>
+
+
+
+                                            <li class="nav-item lv2">
+                                                <a class="nav-link" href="xu-huong.html">Xu hướng</a>
+                                            </li>
+
+
+
+                                        </ul>
+                                    </li>
+
+
+
+                                    <li class="nav-item lv1">
+                                        <a class="nav-link" href="lien-he.html">Liên hệ</a>
+                                </ul>
+                            </nav>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="aside_banner">
+                    <div class="banner-left">
+                        <a href="#" title="Alt">
+                            <img src="contents/images-icons/loading-icon0446.png?1594811922421" data-lazyload="//bizweb.dktcdn.net/100/341/423/themes/777143/assets/banner_as.jpg?1594811922421" alt="Alt">
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+
+
+    </div>
+
+
+
+    </div>
+</section>
+
+<vc:vc-product-relate cat-id="@Model.ProductCategoryId" />

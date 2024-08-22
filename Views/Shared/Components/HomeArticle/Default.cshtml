@@ -1,0 +1,75 @@
+﻿@model List<Article>
+
+<section class="awe-section-6">
+    <section class="section_blog section_blog_and_brand">
+        <div class="container">
+            <div class="wrap_bgd">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="section title_module_main">
+                            <h2>
+                                <a href="tin-tuc.html" title="Xu hướng mới">Xu hướng mới</a>
+                            </h2>
+                        </div>
+
+
+                        <div class="section blog_owlrap">
+
+                            <div class="owl-carousel owl-theme brand_content not-nav2"
+                                 data-dot="false"
+                                 data-nav='false'
+                                 data-loop='false'
+                                 data-autoplay='false'
+                                 data-lg-items='3'
+                                 data-md-items='2'
+                                 data-sm-items='2'
+                                 data-xs-items="1"
+                                 data-margin='30'>
+
+                                
+                                @foreach (var item in Model)
+                                {
+                                    <div class="item_product_main itemcustome">
+                                        <div class="itemblog">
+                                            <div class="blog_index">
+                                                <div class="myblog" onclick="window.location.href='huawei-nova-3-va-mot-so-may-nova-khac-duoc-cap-nhat-android-pie.html';">
+                                                    <div class="image-blog-left col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                                                        <a asp-route="ArticleDetail" asp-route-id="@item.ArticleId" asp-route-title="@item.Title?.RemoveVietnameseAccents()">
+                                                            <img src="@item.Avatar" data-lazyload="@item.Avatar" title="" alt="">
+                                                        </a>
+
+                                                    </div>
+                                                    <div class="content_blog col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <h3 class="h3">
+                                                            <a asp-route="ArticleDetail" asp-route-id="@item.ArticleId" asp-route-title="@item.Title?.RemoveVietnameseAccents()">@item.Title</a>
+                                                        </h3>
+
+                                                        <div class="summary_item_blog">
+                                                            <p>
+                                                                @item.Description
+                                                            </p>
+                                                        </div>
+                                                        <span class="time_post">
+                                                            <span class="name_">@(item.CreateTime.HasValue? item.CreateTime.Value.ToString("dd/mm/yyyy") : "")</span>
+                                                        </span>
+                                                        <a asp-route="ArticleDetail" asp-route-id="@item.ArticleId" asp-route-title="@item.Title?.RemoveVietnameseAccents()" class="readmore_" title="Đọc tiếp">
+                                                            <span class="read">
+                                                                Đọc tiếp
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

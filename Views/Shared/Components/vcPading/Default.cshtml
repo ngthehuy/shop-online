@@ -1,0 +1,50 @@
+﻿
+@model PagingResource
+<div class="text-center">
+    <nav class="clearfix relative nav_pagi f-left w_100">
+        <ul class="pagination clearfix">
+            <!--Về trang đầu -->
+            <li class="page-item ">
+                <a class="page-link" href="@Model.PageFristUrl">«</a>
+            </li>
+            <!--Về trang trước -->
+            <li class="page-item">
+                <a class="page-link" href="@Model.PagePrevUrl">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            </li>
+            @{
+                int startIndex = Model.Page;
+                int endIndex = startIndex + 2;
+                if (endIndex > Model.PageNumbers.Count)
+                {
+                    endIndex = Model.PageNumbers.Count;
+                }
+            }
+            @foreach (var item in Model.PageNumbers.Where(x => x.Key >= startIndex && x.Key <= endIndex))
+            {
+                <li class="page-item @(Model.Page == item.Key ? "active" : "") ">
+                    <a class="page-link" href="@item.Value">
+                        @item.Key
+                    </a>
+                </li>
+            }
+           
+
+          
+            <!-- trang sau -->
+            <li class="page-item">
+                <a class="page-link" href="@Model.PageNextUrl">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+            <!-- trang cuối -->
+            <li class="page-item">
+                <a class="page-link" href="@Model.PageNextUrl">
+                    <i class="fa fa-angle-double-right"></i>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+</div>

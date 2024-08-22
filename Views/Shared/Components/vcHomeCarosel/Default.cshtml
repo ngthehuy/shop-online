@@ -1,0 +1,18 @@
+﻿@model List<Picture>
+
+
+<section class="awe-section-1">
+    <div class="home-slider owl-carousel owl-theme" data-dot="true" data-nav='false' data-loop='true' data-play='true' data-lg-items='1' data-md-items='1' data-sm-items='1' data-xs-items="1" data-margin='0'>
+        @foreach (var item in Model)
+        {
+            <div class="item">
+                <a href="#" class="clearfix">
+                    <img src="@item.Avatar" title="@item.Title">
+                </a>
+            </div>
+        }
+       
+
+      
+    </div>
+</section>

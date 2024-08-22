@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- ================= Favicon ================== -->
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/contents/images-icons/favicon.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/contents/fontawesome.pro.6.0.0.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/contents/ionicons.css">
+    <link href="/contents/bootstrap3.3.7.css" rel="stylesheet" type="text/css" />
+    <link href="/contents/owl.carousel/owl.carousel.css" rel="stylesheet" />
+    <link href="/contents/owl.carousel/owl.theme.default.css" rel="stylesheet" />
+
+    <link href="/contents/base.css" rel="stylesheet" type="text/css" />
+    <link href="/contents/style.css" rel="stylesheet" type="text/css" />
+    <link href="/contents/module.css" rel="stylesheet" type="text/css" />
+    <link href="/contents/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:200,500,600,700" rel="stylesheet" type="text/css" />
+    <link href="/contents/lightbox.css" rel="stylesheet" type="text/css" />
+    <title>
+
+    </title>
+</head>
+<body>
+    
+        <!-- Main content -->
+        
+
+        <vc:vc-header/>
+
+        <!-- Menu mobile -->
+        <div class="hidden-lg opacity_menu"></div>
+        <div id="menu-overlay" class=""></div>
+
+        <div class="menu_mobile sidenav max_991 hidden-lg" id="mySidenav">
+            <div class="logo a-center">
+
+                <a asp-route="home" class="logo-wrapper ">
+                    <img src="/contents/images-icons/logo0446.png?1594811922421" alt="logo Computing">
+                </a>
+
+            </div>
+            <ul class="ul_collections">
+                <li class="special">
+                    <a asp-route="productList">Tất cả danh mục</a>
+                </li>
+               @*  menu-child *@
+
+                <li class="level0 level-top parent">
+                    <a asp-route="home">Trang chủ</a>
+
+                </li>
+
+               
+
+                <li class="level0 level-top parent">
+                    <a asp-route="productList">Sản phẩm</a>
+
+                </li>
+
+                <li class="level0 level-top parent">
+                    <a asp-route="articleList">Tin tức</a>
+
+                   
+
+                </li>
+
+                <li class="level0 level-top parent">
+                    <a asp-route="ho">Liên hệ</a>
+
+                </li>
+
+            </ul>
+        </div>
+
+        <!-- End -->
+       @*  khu vực trang con  *@
+
+      @RenderBody()
+
+        <vc:vc-partner/>
+
+        <section class="awe-section-8">
+            <section class="section section_feedback">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 feedback-form">
+                                    <div class="section title_module_main">
+                                        <h2 class="">
+                                            <a title="Phản hồi của khách hàng">Phản hồi của khách hàng</a>
+                                        </h2>
+                                    </div>
+                                    <div class="content_module">
+                                        <div class="wrap_content">
+                                            <div class="owldanhgia owl-carousel"
+                                                 data-lg-items='1' data-md-items='1' data-sm-items='1' data-xs-items="1" data-margin='30' data-nav="false">
+
+
+
+
+
+
+
+
+                                                <div class="wrapdanhgia">
+                                                    <div class="inwap">
+                                                        <div class="item_danhgia">
+                                                            <div class="image_left">
+                                                                <a class="thumb">
+                                                                    <img src="/contents/images-icons/loading-icon0446.png?1594811922421" data-lazyload="//bizweb.dktcdn.net/100/341/423/themes/777143/assets/anh_1.png?1594811922421" alt="Đặng Trần Quang" />
+                                                                </a>
+                                                            </div>
+                                                            <div class="content_dg">
+                                                                <p>
+                                                                    <span class="name">Đặng Trần Quang</span>
+                                                                    <span>|</span>
+                                                                    <span>Kiến trúc sư</span>
+                                                                </p>
+                                                                <span class="section cmt">Mình rất hay mua hàng tại đây vì tin tưởng chất lượng.  Thái độ phục vụ của nhân viên rất tốt, luôn tận tình, chu đáo.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+
+
+
+
+                                                <div class="wrapdanhgia">
+                                                    <div class="inwap">
+                                                        <div class="item_danhgia">
+                                                            <div class="image_left">
+                                                                <a class="thumb">
+                                                                    <img src="/contents/images-icons/loading-icon0446.png?1594811922421" data-lazyload="//bizweb.dktcdn.net/100/341/423/themes/777143/assets/anh_2.png?1594811922421" alt="Trương Hà Tùng" />
+                                                                </a>
+                                                            </div>
+                                                            <div class="content_dg">
+                                                                <p>
+                                                                    <span class="name">Trương Hà Tùng</span>
+                                                                    <span>|</span>
+                                                                    <span>Dược sĩ</span>
+                                                                </p>
+                                                                <span class="section cmt">Mình lựa chọn Computing vì tại đây có những sản phẩm giá cả phải chăng, dịch vụ và bảo hành chu đáo.,</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+
+
+
+
+                                                <div class="wrapdanhgia">
+                                                    <div class="inwap">
+                                                        <div class="item_danhgia">
+                                                            <div class="image_left">
+                                                                <a class="thumb">
+                                                                    <img src="/contents/images-icons/loading-icon0446.png?1594811922421" data-lazyload="//bizweb.dktcdn.net/100/341/423/themes/777143/assets/anh_3.png?1594811922421" alt="Mai Thu Thảo" />
+                                                                </a>
+                                                            </div>
+                                                            <div class="content_dg">
+                                                                <p>
+                                                                    <span class="name">Mai Thu Thảo</span>
+                                                                    <span>|</span>
+                                                                    <span>Kinh doanh</span>
+                                                                </p>
+                                                                <span class="section cmt">Mình may mắn tìm được sản phẩm yêu thích tại Computing. Mong Computing tiếp tục phát triển về dịch vụ khách hàng và bảo hành sản phẩm.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 feedback-form">
+                                    <div class="section title_module_main">
+                                        <h2 class="">
+                                            <a title="Gửi ý kiến phản hồi ">Gửi ý kiến phản hồi </a>
+                                        </h2>
+                                    </div>
+
+                                    <div accept-charset="utf-8" action="https://computing.edu.vn/contact" id="contact" method="post">
+                                        <div class="form-coment content_module">
+
+
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-6">
+                                                    <fieldset class="form-group">
+                                                        <input type="text" placeholder="Nhập tên" class="input-control" required value="" name="contact[Name]">
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-6">
+                                                    <fieldset class="form-group">
+                                                        <input type="email" placeholder="Email của bạn" pattern="[a-z0-9._%+-]+@@[a-z0-9.-]+\.[a-z]{2,4}$" required id="email2" class="input-control" value="" name="contact[email]">
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <fieldset class="form-group row">
+                                                <textarea id="subject" name="contact[Body]" placeholder="Nhập tin nhắn" rows="5" required class="input-control"></textarea>
+                                            </fieldset>
+                                            <div class="margin-bottom-fix margin-bottom-50-article clearfix">
+                                                <button type="submit" id="send-btn" class="btn button_send button_custome_35 btn-primary">Gửi phản hồi</button>
+                                            </div>
+                                            <!-- End form mail -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <vc:vc-footer/>
+
+        <script src="/scripts/jquery-2.2.3.min.js" type="text/javascript"></script>
+        <script src="/scripts/bootstrap.3.3.7.js" type="text/javascript"></script>
+        <script src="/scripts/owl.carousel.js"></script>
+        <script src="/scripts/jquery.elevatezoom.js" type="text/javascript"></script>
+        <script src="/scripts/jquery.prettyphoto.js" type="text/javascript"></script>
+        <script src="/scripts/jquery.prettyphoto.init.js" type="text/javascript"></script>
+        <script src="/scripts/main.js" type="text/javascript"></script>
+        <script src="/scripts/script.js"></script>
+   
+</body>
+</html>

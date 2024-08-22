@@ -1,0 +1,65 @@
+﻿@model List<ProductMainCategory>
+
+<div class="nav-2">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-8 hidden-xs hidden-sm hidden-md">
+                <div class="bg-header-nav hidden-xs hidden-sm">
+                    <div>
+                        <div class="row row-noGutter-2">
+                            <nav class="header-nav">
+                                <ul class="item_big">
+
+                                    <!--ul cấp 1-->
+                                    @foreach (var item in Model)
+                                    {
+                                        <li class="nav-item nav-item-2 ">
+                                            <a class="a-img" asp-route="ProductListByMainCat"
+                                            asp-route-mid="@item.ProductMainCategoryId"
+                                            asp-route-title ="@item.Title?.RemoveVietnameseAccents()" ><span>@item.Title</span><i class="fa fa-angle-down"></i></a>
+                                            <ul class="item_small hidden-sm hidden-xs">
+
+                                               <!--ul cấp 2-->
+                                                @foreach (var subItem in item.ProductCategories)
+                                                {
+                                                    <li>
+                                                        <a asp-route ="ProductListBySubCat"
+                                                                    asp-route-mid="@subItem.ProductMainCategoryId"
+                                                                    asp-route-cid="@subItem.ProductCategoryId"
+                                                                    asp-route-title="@subItem.Title?.RemoveVietnameseAccents()" title="">@subItem.Title<i class="fa fa-angle-right"></i></a>
+                                                    </li>
+                                                }
+                                                
+
+                                              
+                                            </ul>
+                                        </li>
+                                    }
+
+                                   
+
+                                  
+
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                <div class="searchbox">
+                    <div action="https://computing.edu.vn/search" method="get" class="input-group search-bar" role="search">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn icon-fallback-text">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                        <input type="text" name="query" value="" autocomplete="off" placeholder="Tìm kiếm..." class="input-group-field auto-search">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

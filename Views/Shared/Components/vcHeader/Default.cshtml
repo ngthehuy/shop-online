@@ -1,0 +1,82 @@
+﻿<header class="header">
+    <div class="mid-header wid_100">
+        <div class="container">
+            <div class="row">
+                <div class="content_header">
+                    <div class="header-main">
+                        <div class="menu-bar-h nav-mobile-button hidden-lg">
+                            <a href="#nav-mobile">
+                                <img src="/contents/images-icons/i_menubar0446.png?1594811922421" alt="icon menu">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 logo-main">
+                            <div class="logo">
+                                <a asp-route="home" class="logo-wrapper ">
+                                    <img src="/contents/images-icons/logo0446.png?1594811922421" alt="logo Computing">
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-8 hidden-xs hidden-sm hidden-md no-padding-left">
+                            <div class="header-left">
+                                <div class="bg-header-nav hidden-xs hidden-sm">
+                                    <div>
+                                        <div class="row row-noGutter-2">
+                                            <nav class="header-nav">
+                                                <ul class="item_big">
+                                                    @*Menu-parent *@
+
+                                                    <li class="nav-item nav-item-2 active">
+                                                        <a class="a-img" asp-route="home"><span>Trang chủ</span></a>
+                                                    </li>
+
+
+
+
+
+
+
+                                                    <li class="nav-item nav-item-2 ">
+                                                        <a class="a-img" asp-route="productList"><span>Sản phẩm</span></a>
+                                                    </li>
+
+
+
+
+                                                    <li class="nav-item ">
+                                                        <a class="a-img" asp-route="articleList"><span>Tin tức</span><i class="fa fa-angle-down"></i></a>
+
+                                                    </li>
+
+
+
+
+                                                    <li class="nav-item nav-item-2 ">
+                                                        <a class="a-img" asp-route="contact"><span>Liên hệ</span></a>
+                                                    </li>
+
+
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 no-padding-left cartright">
+                            <div class="header-right">
+                              <vc:vc-mini-cart/>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+   <vc:vc-product-menu/>
+
+</header>

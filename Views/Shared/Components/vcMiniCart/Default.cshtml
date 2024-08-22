@@ -1,0 +1,21 @@
+﻿@model Cart
+<div class="top-cart-contain">
+    <div class="mini-cart text-xs-center">
+        <div class="heading-cart cart_header">
+            <a class="img_hover_cart" asp-route="ShoppingCart" title="Giỏ hàng">
+                <img src="/contents/images-icons/cart-icon0446.png?1594811922421" alt="Computing">
+            </a>
+            <div class="content_cart_header">
+                <a class="bg_cart" asp-route="ShoppingCart" title="Giỏ hàng">
+                    <span class="text-giohang">
+                        Giỏ hàng
+                    </span>
+                </a>
+            </div>
+            <span class="item-count">
+                <span class="count_item count_item_pr">@Model.Count</span>
+            </span>
+        </div>
+
+    </div>
+</div>

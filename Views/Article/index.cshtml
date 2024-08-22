@@ -1,0 +1,191 @@
+﻿@model List<Article>
+
+<div class="breadcrumb_background">
+    <div class="title_full">
+        <div class="container a-center">
+            <h1 class="title_page">Tin tức</h1>
+        </div>
+    </div>
+</div>
+<section class="bread-crumb">
+    <span class="crumb-border"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 a-left">
+                <ul class="breadcrumb" itemscope itemtype="https://data-vocabulary.org/Breadcrumb">
+                    <li class="home">
+                        <a itemprop="url" href="index.html"><span itemprop="title">Trang chủ</span></a>
+                        <span class="mr_lr">&nbsp;/&nbsp;</span>
+                    </li>
+                    <li><strong><span itemprop="title">Tin tức</span></strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container" itemscope itemtype="https://schema.org/Blog">
+  
+    <div class="wrap_background_aside padding-top-15 margin-bottom-10">
+        <div class="row">
+            <div class="content_all f-left w_100">
+                <div class="right-content margin-bottom-fix margin-bottom-50-article col-lg-9 col-md-9 col-sm-12 col-xs-12 col-lg-push-3 col-md-push-3">
+                    <div class="list-blogs blog-main">
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="itemblog">
+                                        <div class="blog_index">
+                                            <div class="myblog">
+                                                <div class="image-blog-left col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <a asp-route="ArticleDetail" asp-route-id="@item.ArticleId" asp-route-title="@item.Title?.RemoveVietnameseAccents()">
+                                                        <img src="@item.Avatar" data-lazyload="@item.Avatar" title="@item.Title" alt="@item.Title">
+                                                    </a>
+                                                </div>
+                                                <div class="content_blog col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <h3 class="h3">
+                                                        <a asp-route="ArticleDetail" asp-route-id="@item.ArticleId" asp-route-title="@item.Title?.RemoveVietnameseAccents()">@item.Title</a>
+                                                    </h3>
+                                                    <div class="summary_item_blog">
+                                                        <p>
+                                                            @item.Description
+                                                        </p>
+                                                    </div>
+                                                    <span class="time_post">
+                                                        <span class="name_">@(item.CreateTime.HasValue ? item.CreateTime.Value.ToString("dd/mm/yy") : "")</span>
+                                                    </span>
+                                                    <a asp-route="ArticleDetail" asp-route-id="@item.ArticleId" asp-route-title="@item.Title?.RemoveVietnameseAccents()"  class="readmore_" title="Đọc tiếp">
+                                                        <span class="read">
+                                                            Đọc tiếp
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+
+                            <nav class="clearfix relative nav_pagi f-left w_100">
+                                <ul class="pagination clearfix">
+
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">«</a>
+                                    </li>
+
+
+
+
+
+                                    <li class="active page-item disabled">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+
+
+
+
+                                    <li class="page-item">
+                                        <a class="page-link" href="tin-tuc4658.html?page=2">2</a>
+                                    </li>
+
+
+
+
+                                    <li class="page-item hidden-xs">
+                                        <a class="page-link" href="tin-tuc4658.html?page=2">
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </nav>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <aside class="left left-content col-md-3 col-lg-3 col-sm-12 col-xs-12 col-lg-pull-9 col-md-pull-9">
+
+                    <aside class="aside-item sidebar-category collection-category">
+                        <div class="aside-title">
+                            <h2 class="title-head margin-top-0 margin-bottom-10"><span>Danh mục tin tức</span></h2>
+                        </div>
+                        <div class="aside-content">
+                            <nav class="nav-category navbar-toggleable-md">
+                                <ul class="nav navbar-pills">
+
+
+
+                                    <li class="nav-item lv1">
+                                        <a class="nav-link" href="index.html">Trang chủ</a>
+
+
+
+
+                                    <li class="nav-item lv1">
+                                        <a class="nav-link" href="gioi-thieu.html">Giới thiệu</a>
+
+
+
+
+                                    <li class="nav-item lv1">
+                                        <a class="nav-link" href="collections/collections-all.html">Sản phẩm</a>
+
+
+
+
+                                    <li class="nav-item lv1">
+                                        <a href="tin-tuc.html" class="nav-link">Tin tức</a>
+                                        <i class="fa fa-angle-right"></i>
+                                        <ul class="dropdown-menu">
+
+
+                                            <li class="nav-item lv2">
+                                                <a class="nav-link" href="tin-moi.html">Tin mới</a>
+                                            </li>
+
+
+
+                                            <li class="nav-item lv2">
+                                                <a class="nav-link" href="thu-thuat.html">Thủ thuật</a>
+                                            </li>
+
+
+
+                                            <li class="nav-item lv2">
+                                                <a class="nav-link" href="xu-huong.html">Xu hướng</a>
+                                            </li>
+
+
+
+                                        </ul>
+                                    </li>
+
+
+
+
+                                    <li class="nav-item lv1">
+                                        <a class="nav-link" href="lien-he.html">Liên hệ</a>
+                                </ul>
+                            </nav>
+                        </div>
+                    </aside>
+
+                    <vc:vc-article-special/>
+                  
+
+                </aside>
+
+            </div>
+        </div>
+    </div>
+</div>
